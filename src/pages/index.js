@@ -1,5 +1,6 @@
 import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -20,8 +21,19 @@ const IndexPage = ({ data }) => {
           style={{ marginBottom: `var(--space-3)` }}
         />
         <h1>
-          Welcome to <b>Gatsby!</b> Remote Image Plugin Demo
+          Welcome to <b>Gatsby!</b> Remote Fox Image Plugin Demo
         </h1>
+
+        {data.allRemoteImageFile.nodes.map((foxImage, i) => {
+          return (
+            <div key={foxImage.id} style={{ marginBottom: "48px" }}>
+              <GatsbyImage
+                image={foxImage.gatsbyImage}
+                alt={`Fox Photo Number ${i + 1}`}
+              />
+            </div>
+          )
+        })}
       </div>
     </Layout>
   )
@@ -34,22 +46,15 @@ const IndexPage = ({ data }) => {
  */
 export const Head = () => <Seo title="Home" />
 
-// export const foxQuery = graphql`
-//   {
-//     allFoxNodes {
-//       edges {
-//         node {
-//           localImage {
-//             childImageSharp {
-//               fluid(maxWidth: 500) {
-//                 ...GatsbyImageSharpFluid
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const foxQuery = graphql`
+  {
+    allRemoteImageFile {
+      nodes {
+        id
+        gatsbyImage(height: 400)
+      }
+    }
+  }
+`
 
 export default IndexPage

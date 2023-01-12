@@ -5,15 +5,18 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "gatsby": "^5.4.0",
     "gatsby-plugin-image": "^3.4.0",
     "gatsby-plugin-manifest": "^5.4.0",
-    "gatsby-plugin-remote-images": "^3.6.0-alpha.2",
+    "gatsby-plugin-remote-images": "^3.6.0--alpha.3",
     "gatsby-plugin-sharp": "^5.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-sharp": "^5.4.0",
+    "node-fetch": "^2.6.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "unsplash-js": "^7.0.15"
   },
   "devDependencies": {
     "prettier": "^2.8.1"
