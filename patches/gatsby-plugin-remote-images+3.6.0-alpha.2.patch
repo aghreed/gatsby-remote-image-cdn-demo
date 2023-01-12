@@ -1,0 +1,15 @@
+diff --git a/node_modules/gatsby-plugin-remote-images/gatsby-node.js b/node_modules/gatsby-plugin-remote-images/gatsby-node.js
+index 27af4e1..a771331 100644
+--- a/node_modules/gatsby-plugin-remote-images/gatsby-node.js
++++ b/node_modules/gatsby-plugin-remote-images/gatsby-node.js
+@@ -179,7 +179,9 @@ async function createImageNode(url, node, options, reporter, silent) {
+   }
+   try {
+     if (mode === 'cdn') {
+-      fieldNodeId = options.createNodeId(`RemoteImageFile >>> ${node.id}`);
++      console.log('handling CDN mode: ', node.id)
++      console.log('image url is: ', url)
++      fileNodeId = options.createNodeId(`RemoteImageFile >>> ${node.id}`);
+       const metadata = await probe(url);
+       await options.createNode({
+         id: fileNodeId,
