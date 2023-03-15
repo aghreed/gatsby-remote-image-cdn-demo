@@ -5085,10 +5085,10 @@ gatsby-plugin-page-creator@^5.7.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
-gatsby-plugin-remote-images@3.6.0--alpha.3:
-  version "3.6.0--alpha.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-remote-images/-/gatsby-plugin-remote-images-3.6.0--alpha.3.tgz#b7818da00253424d39a4c5e229db84fc4bf85ba1"
-  integrity sha512-I0Efe6QsZFKnmBkuSeHn2hNGKRMIMbMRTRgEYi2RHiGOu6XG+RjEx6HAqMf0CDYCQz9bvCZ5mUrDgK14HjQstQ==
+gatsby-plugin-remote-images@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-remote-images/-/gatsby-plugin-remote-images-3.6.0.tgz#41a8cf9c7d179146454be6f801aa254495cedd4f"
+  integrity sha512-KIT12uTPk9dpQK5Baj1AFWu4tJXqUW9tdV4UooYJ/VuPJDXctG/kRFUROnAunsS/njQO7641du6Hy9tJUWhibw==
   dependencies:
     gatsby-source-filesystem "^4.0.0"
     lodash "^4.17.15"

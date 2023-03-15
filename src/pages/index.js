@@ -24,11 +24,11 @@ const IndexPage = ({ data }) => {
           Welcome to <b>Gatsby!</b> Remote Fox Image Plugin Demo
         </h1>
 
-        {data.allRemoteImageFile.nodes.map((foxImage, i) => {
+        {data.allFoxNodes.nodes.map((foxImage, i) => {
           return (
             <div key={foxImage.id} style={{ marginBottom: "48px" }}>
               <GatsbyImage
-                image={foxImage.gatsbyImage}
+                image={foxImage.remoteImage.gatsbyImage}
                 alt={`Fox Photo Number ${i + 1}`}
               />
             </div>
@@ -48,10 +48,12 @@ export const Head = () => <Seo title="Home" />
 
 export const foxQuery = graphql`
   {
-    allRemoteImageFile {
+    allFoxNodes {
       nodes {
         id
-        gatsbyImage(height: 400)
+        remoteImage {
+          gatsbyImage(height: 400)
+        }
       }
     }
   }
